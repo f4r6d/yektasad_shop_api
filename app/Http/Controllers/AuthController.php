@@ -31,7 +31,7 @@ class AuthController extends Controller implements HasMiddleware
      *      tags={"auth"},
      *      summary="register",
      *      description="register user",
-     *          @OA\RequestBody(
+     *      @OA\RequestBody(
      *         @OA\MediaType(
      *             mediaType="multipart/form-data",
      *             @OA\Schema(

@@ -122,6 +122,98 @@
                 ]
             }
         },
+        "/api/cart/add": {
+            "post": {
+                "tags": [
+                    "cart"
+                ],
+                "summary": "add to cart",
+                "description": "add to cart",
+                "operationId": "add",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "schema": "Request",
+                                "title": "add",
+                                "required": [
+                                    "product_id"
+                                ],
+                                "properties": {
+                                    "product_id": {
+                                        "type": "number",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            }
+        },
+        "/api/cart/remove/{item_id}": {
+            "delete": {
+                "tags": [
+                    "cart"
+                ],
+                "summary": "remove from cart",
+                "description": "remove from cart",
+                "operationId": "remove",
+                "parameters": [
+                    {
+                        "name": "item_id",
+                        "in": "path",
+                        "description": "The item id to be deleted",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            }
+        },
+        "/api/cart": {
+            "get": {
+                "tags": [
+                    "cart"
+                ],
+                "summary": "cart.index",
+                "description": "cart.index",
+                "operationId": "cart.index",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            }
+        },
         "/api/products": {
             "get": {
                 "tags": [

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,3 +13,7 @@ Route::apiResource('products', ProductController::class)->only([
     'index',
     'store',
 ]);
+
+Route::post('/cart/add', [CartController::class, 'addToCart']);
+Route::delete('/cart/remove/{item}', [CartController::class, 'removeFromCart']);
+Route::get('/cart', [CartController::class, 'viewCart']);
