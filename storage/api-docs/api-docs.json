@@ -121,6 +121,64 @@
                     }
                 ]
             }
+        },
+        "/api/products": {
+            "get": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "products.index",
+                "description": "products.index",
+                "operationId": "products.index",
+                "responses": {
+                    "200": {
+                        "description": "Response Message"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "products.store",
+                "description": "products.store",
+                "operationId": "products.store",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "schema": "Request",
+                                "title": "products.store",
+                                "required": [
+                                    "name",
+                                    "price",
+                                    "quantity"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Book"
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "example": "30000"
+                                    },
+                                    "quantity": {
+                                        "type": "number",
+                                        "example": "3"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response Message"
+                    }
+                }
+            }
         }
     },
     "components": {

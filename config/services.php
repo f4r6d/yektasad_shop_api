@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'manager' => [
+        'email' => env('MANAGER_EMAIL', 'manager@gmail.com'),
+    ],
+
 ];
